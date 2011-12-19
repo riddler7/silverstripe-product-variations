@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1820/modules/ecommerce_product_variation/trunk/code/dod
+END
+ProductAttributeDecoratorColour.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1757/modules/ecommerce_product_variation/trunk/code/dod/ProductAttributeDecoratorColour.php
+END
+ProductWithVariationDecorator.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1820/modules/ecommerce_product_variation/trunk/code/dod/ProductWithVariationDecorator.php
+END
+ProductVariationBulkLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1031/modules/ecommerce_product_variation/trunk/code/dod/ProductVariationBulkLoader.php
+END

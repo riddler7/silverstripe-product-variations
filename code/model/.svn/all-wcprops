@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1768/modules/ecommerce_product_variation/trunk/code/model
+END
+ProductVariation.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1768/modules/ecommerce_product_variation/trunk/code/model/ProductVariation.php
+END
+ProductAttributeValue.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1757/modules/ecommerce_product_variation/trunk/code/model/ProductAttributeValue.php
+END
+ProductAttributeType.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1443/modules/ecommerce_product_variation/trunk/code/model/ProductAttributeType.php
+END
