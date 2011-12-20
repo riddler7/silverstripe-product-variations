@@ -7,6 +7,8 @@
 class ProductVariation extends DataObject {
 
 	public static $db = array(
+                'InternalCode' => 'Varchar(100)',
+                'Special' => 'Currency',
 		'InternalItemID' => 'Varchar(30)',
 		'Price' => 'Currency',
 		'AllowPurchase' => 'Boolean',
@@ -114,6 +116,7 @@ class ProductVariation extends DataObject {
 		$fields = new FieldSet(new TabSet('Root',
 			new Tab('Main',
 				new NumericField('Price'),
+                                new NumericField('Special'),
 				new CheckboxField('AllowPurchase', _t("ProductVariation.ALLOWPURCHASE", 'Allow Purchase ?')),
 				new TextField('InternalItemID', _t("ProductVariation.INTERNALITEMID", 'Internal Item ID')),
 				new TextField('Description', _t("ProductVariation.DESCRIPTION", "Description (optional)")),
@@ -280,6 +283,9 @@ class ProductVariation extends DataObject {
 
 	function CalculatedPrice() {return $this->getCalculatedPrice();}
 	function getCalculatedPrice() {
+                if (!empty($this->Special)) {
+                        return $this->Special;
+                }
 		$price = $this->Price;
 		$this->extend('updateCalculatedPrice',$price);
 		return $price;
@@ -325,6 +331,18 @@ class ProductVariation extends DataObject {
 	function QuantityDecimals(){
 		return 0;
 	}
+        
+        /**
+         * Overwrite standard price with special price if it is sets
+         */
+        /*public function getPrice() {
+                if (!empty($this->Special)) {
+                        return $this->Special;
+                }
+                else {
+                        return $this->getField('Price');
+                }
+        }*/
 
 
 }

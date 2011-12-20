@@ -82,7 +82,8 @@ class ProductWithVariationDecorator extends DataObjectDecorator {
 		$fields->addFieldToTab('Root.Content', new Tab(ProductVariation::get_plural_name(),
 			new HeaderField(ProductVariation::get_plural_name() . " for {$this->owner->Title}"),
 			$this->owner->getVariationsTable(),
-			new CreateEcommerceVariations_Field('VariationMaker', '', $this->owner->ID)
+                        $this->owner->getVariationAttributesTable()
+			//new CreateEcommerceVariations_Field('VariationMaker', '', $this->owner->ID)
 		));
 		if($this->owner->Variations() && $this->owner->Variations()->count()){
 			$fields->addFieldToTab('Root.Content.Main',new LabelField('variationspriceinstructions','Price - Because you have one or more variations, you can vary the price in the "'.ProductVariation::get_plural_name().'" tab. You set the default price here.'), 'Price');
@@ -111,7 +112,7 @@ class ProductWithVariationDecorator extends DataObjectDecorator {
 
 		$summaryfields = array_merge($summaryfields, $singleton->summaryFields());
 		unset($summaryfields["Product.Title"]);
-		unset($summaryfields["Title"]);
+		//unset($summaryfields["Title"]);
 
 		$tableField = new ComplexTableField(
 			$this->owner,
@@ -126,6 +127,12 @@ class ProductWithVariationDecorator extends DataObjectDecorator {
 		}
 		$tableField->setPermissions(array('edit', 'delete', 'export', 'show'));
 		return $tableField;
+	}
+        
+        function getVariationAttributesTable(){
+		$mmctf = new ManyManyComplexTableField($this->owner,'VariationAttributes','ProductAttributeType');
+		
+		return $mmctf;
 	}
 
 

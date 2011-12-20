@@ -408,7 +408,7 @@ var CreateEcommerceVariationsField = {
 			}
 		);
 		return a;
-	},
+	}
 
 
 
